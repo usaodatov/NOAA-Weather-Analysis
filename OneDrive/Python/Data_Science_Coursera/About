@@ -1,1 +1,42 @@
+ In this notebook, 
+we'll clean and prepare NOAA weather data for analysis or machine learning. The data includes hourly weather observations. We'll handle missing values, change some features, and resample the data to make it ready for use.
 
+    This process is based on a script originally provided by DAX, but we've adapted it for use in Jupyter Lab.
+
+
+
+This script, provided by DAX, cleans and prepares NOAA weather data for analysis or machine learning. Here's what it does:
+
+Loads the Data: Reads the weather data from a CSV file (jfk_weather.csv).
+ 
+Cleans the Data: Handles missing values (e.g., replaces '*' and 'T' with NaN or 0.00) and converts all columns to numeric format.
+
+Transforms Features: Resamples the data to hourly intervals, transforms wind direction into cyclical variables using sine and cosine, and converts pressure tendency into dummy variables.
+
+Saves the Cleaned Data: Exports the cleaned dataset to a new CSV file (jfk_weather_cleaned.csv).
+
+
+    Later stage (cell 7 and further) - Independently, following has been conducted
+
+Applies Modeling Techniques: Various modeling techniques will be applied to the cleaned data for analysis or machine learning.
+
+
+    Note: Adaptations for Jupyter Lab
+
+The original script (provided by DAX) was adjusted slightly to work seamlessly in Jupyter Lab. Key changes include:
+
+Removed argparse Dependency
+
+Replaced command-line arguments with direct variable assignments (e.g., FILEPATH = 'jfk_weather.csv').
+
+Verbose output is toggled with a boolean (VERBOSE = True).
+
+Simplified Execution Flow
+
+Removed the if __name__ == "__main__": block, as Jupyter Notebooks execute code interactively.
+
+Verbose Output Adjustment
+
+Updated memory calculation to use pandas’ memory_usage(deep=True) instead of sys.getsizeof for accuracy.
+
+These adjustments ensure compatibility with Jupyter Lab while retaining the core functionality of DAX’s original script.
